@@ -1,4 +1,4 @@
-# QLweatherAPI
+# weatherAPI
 
 
 RestAssured-BDD-Java- Weather-App
@@ -17,7 +17,7 @@ Steps to start :
 3.    Execute the following Maven command's
       o    mvn clean :- To clean the maven repo
       o    mvn install :- To install the maven requirments
-      o    mvn test :- To execute the test scenarios
+      o    mvn clean verify -DexecEnv=sit -Dcucumber.options="--tags @test"  :- To execute the test scenarios
 
 
 
@@ -30,4 +30,7 @@ API used
 https://api.weatherbit.io/v2.0/current?lat=20&lon=-21&key=016cff34f8cb49f6995bf135b78e6526'
 
 
-Please note that API Key can only be used for Get current weather API. Same key did not allow to run the 3 hourly weather API.  
+![image](https://user-images.githubusercontent.com/57488334/162578625-3d5e2f2a-d332-4ebb-bc74-d43b4a043f3f.png)
+
+
+
