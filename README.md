@@ -34,3 +34,6 @@ https://api.weatherbit.io/v2.0/current?lat=20&lon=-21&key=016cff34f8cb49f6995bf1
 
 
 
+Report
+
+![img.png](img.png)

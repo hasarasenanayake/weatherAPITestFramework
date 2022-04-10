@@ -10,7 +10,6 @@ import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import io.weatherAPI.endPoint.postCodeActioEP;
-import io.weatherAPI.endPoint.postCodeEP;
 import io.weatherAPI.endPoint.weatherBitActionsEP;
 import io.weatherAPI.models.Result;
 import io.weatherAPI.utils.Constants;
