@@ -1,20 +1,20 @@
 @test
 Feature: Verify Get Current Weather Data
 
-Scenario Outline: Verify Current Weather API with Valid data
-	Given The user have valid API key
-	When I submit GET request with the "<lat>" and "<lon>"
-	Then API should return status as 200
-	And Then verify response body is JSON with tuples
-		| temp     | regex ^-?\\d*\\.?\\d+$ |
-		| wind_spd | regex ^-?\\d*\\.?\\d+$ |
-		| precip   | regex ^-?\\d*\\.?\\d+$ |
-		| snow     | regex ^-?\\d*\\.?\\d+$ |
+  Scenario Outline: Verify Current Weather API with Valid data
+    Given The user have valid API key
+    When I submit GET request with the "<lat>" and "<lon>"
+    Then API should return status as 200
+    And Then verify response body is JSON with tuples
+      | temp     | regex ^-?\\d*\\.?\\d+$ |
+      | wind_spd | regex ^-?\\d*\\.?\\d+$ |
+      | precip   | regex ^-?\\d*\\.?\\d+$ |
+      | snow     | regex ^-?\\d*\\.?\\d+$ |
 #		| weather  | regex /\[\s*[^\[\]]*?\s*\]/g |
-	Examples:
-		| lat       |   lon        |
-		| 40.730610 |   -73.935242 |
-	    | 90        |   -92.222		|
+    Examples:
+      | lat       | lon        |
+      | 40.730610 | -73.935242 |
+      | 90        | -92.222    |
 
 #	Scenario Outline: Verify Current Weather API with invalid data
 #		Given The user have valid API key

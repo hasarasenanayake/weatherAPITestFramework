@@ -4,10 +4,12 @@ import com.google.gson.Gson;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
+import cucumber.api.PendingException;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
+import io.weatherAPI.endPoint.postCodeActioEP;
 import io.weatherAPI.endPoint.postCodeEP;
 import io.weatherAPI.endPoint.weatherBitActionsEP;
 import io.weatherAPI.models.Result;
@@ -31,7 +33,8 @@ public class WeatherDataStep {
 
     @Steps
     weatherBitActionsEP weatherBitActionsEP;
-    postCodeEP postCodeEP;
+    public postCodeActioEP postCodeActioEP;
+
 
     String apiKey;
     String lat;
@@ -86,7 +89,7 @@ public class WeatherDataStep {
         verifyJSONBody(tuples, data);
     }
 
-    public void verifyJSONBody(Map<String, String> tuples, List<Map<String, String>> data) {
+    public static void verifyJSONBody(Map<String, String> tuples, List<Map<String, String>> data) {
 
 
             for (String key : tuples.keySet()) {
@@ -122,4 +125,30 @@ public class WeatherDataStep {
     }
 
 
+//    @And("^Then verify postcode API response body is JSON with tuples$")
+//    public void thenVerifyPostcodeAPIResponseBodyIsJSONWithTuples(Map<String, String> tuples) throws Exception {
+//        List data = postCodeActioEP.getWeatherdata();
+//        System.out.println("data"+data);
+//        WeatherDataStep.verifyJSONBody(tuples, data);
+//    }
+//
+//    @When("^I submit postcode GET request with the \"([^\"]*)\" ,\"([^\"]*)\" and \"([^\"]*)\"$")
+//    public void iSubmitPostcodeGETRequestWithTheAnd(String postcode, String country, String Include) throws Throwable {
+//        //postCodeActioEP.requestWeatherPC(postcode,country,Include);
+//        try {
+//            String status = null;
+//            postCodeActioEP.requestWeatherPC(postcode,country,Include);
+//            status = Serenity.sessionVariableCalled(TEST_STATUS);
+//            if (status.length() == 0) status = EMPTY_STR;
+//            Assert.assertEquals(EMPTY_STR, status);
+//        }catch (Exception e) {
+//
+//            e.printStackTrace();
+//        }
+//    }
+//
+//    @Then("^Postcode API should return status as (\\d+)$")
+//    public void postcodeAPIShouldReturnStatusAs(int statusCode) throws Exception {
+//        assertThat("Verify Status code", postCodeActioEP.getStatusCode(), equalTo(statusCode));
+//    }
 }
